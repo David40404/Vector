@@ -10,6 +10,12 @@ namespace Vector {
 		Vector2() {}
 		Vector2(T x, T y) : x(x), y(y) {}
 
+		void swap() {
+			T tmp = x;
+			x = y;
+			y = tmp;
+		}
+
 		Vector2 operator+(const Vector2& other) { return Vector2(x + other.x, y + other.y); }
 		Vector2 operator-(const Vector2& other) { return Vector2(x - other.x, y - other.y); }
 		Vector2 operator*(const Vector2& other) { return Vector2(x * other.x, y * other.y); }
@@ -36,7 +42,7 @@ namespace Vector {
   
 		Vector3() {}
 		Vector3(T x, T y, T z) : x(x), y(y), z(z) {}
-  
+
   		Vector3 operator+(const Vector3& other) { return Vector3(x + other.x, y + other.y, z + other.z); }
   		Vector3 operator-(const Vector3& other) { return Vector3(x - other.x, y - other.y, z - other.z); }
   		Vector3 operator*(const Vector3& other) { return Vector3(x * other.x, y * other.y, z * other.z); }
